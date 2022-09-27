@@ -41,21 +41,25 @@ const MatchAndCopy_DIR = PHPWG_ROOT_PATH . PWG_LOCAL_DIR . 'MatchAndCopy/'; // e
 // | Add event handlers                                                    |
 // +-----------------------------------------------------------------------+
 // şimdilik gerek yok gibi
+//add_event_handler('init', 'MatchAndCopy_init');
 
+// Dil dosyalarının yüklenmesi
+load_language('plugin.lang', MatchAndCopy_PATH);
 
 /**
- * plugin initialization
+ * plugin initialization (eklentiyi başlatma)
  *   - check for upgrades
  *   - unserialize configuration
  *   - load language
+ * şimdilik devre dişi, piwigo içersine dahil etmeye gerek yok
  */
-function MatchAndCopy_init(): void
+/*function MatchAndCopy_init(): void
 {
     global $conf;
 
     // load plugin language file
-    load_language('plugin.lang', MatchAndCopy_PATH);
+    //load_language('plugin.lang', MatchAndCopy_PATH);
 
     // prepare plugin configuration
     $conf['MatchAndCopy'] = safe_unserialize($conf['MatchAndCopy']);
-}
+}*/

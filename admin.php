@@ -9,7 +9,7 @@ defined('MatchAndCopy_PATH') or die('Hacking attempt!');
 
 check_status(ACCESS_WEBMASTER); // izin kontrol
 
-global $template, $page, $conf; // şimdilik tüm ayar dosyaları alındı.
+global $template, $page, $conf, $prefixeTable; // şimdilik tüm ayar dosyaları alındı.
 
 // get current tab
 $page['tab'] = $_GET['tab'] ?? $page['tab'] = 'home';
@@ -22,6 +22,7 @@ $template->assign(array(
     'MatchAndCopy_PATH'=> MatchAndCopy_PATH, // used for images, scripts, ... access
     'MatchAndCopy_ABS_PATH'=> realpath(MatchAndCopy_PATH), // used for template inclusion (Smarty needs a real path)
     'MatchAndCopy_ADMIN' => MatchAndCopy_ADMIN,
+    'MatchAndCopy_prefixeTable' => $prefixeTable,
 ));
 
 // send page content
