@@ -12,5 +12,5 @@ $lang['Check me!'] = 'Beni işaretle!';
 $lang['Nothing appened, but you didn\'t check the box!'] = 'Hiç birşey olmadı, fakat beni işaretlemedin!';
 $lang['Nothing appened, but you checked the box!'] = 'Hiç bir şey olmadı, fakat beni işaretledin!';
 $lang['Common configuration'] = 'Ortak yapılandırma';
-
-?>
+$lang['For the log page'] = 'Log sayfası için';
+$lang['Start Match'] = 'Eşleşmeyi Başlat';

@@ -2,7 +2,7 @@
 /*
 Plugin Name: MatchAndCopy
 Version: 13.0.0RC3
-Description: plugin to match and copy the metadata (tags, description, etc.) associated with the item from the old piwigo database to the new database.
+Description: A plugin to match metadata (tags, description, etc.) associated with items in the old piwigo database and transfer them by copying them to the new database.
 Plugin URI:
 Author: kubikanber
 Author URI: http://kubikanber.com
@@ -12,16 +12,18 @@ Has Settings: true
 /** Bu eklenti eski piwigo veritabanından yeni veri tabanına geçerken; eski veri tabanını kolanlama yapmadan bilgilerin
  * yeni veritabnına aktarılması için yapılmıştır*/
 
+// Piwigo path'ı tanımlanmışmı yok ise dur
 defined('PHPWG_ROOT_PATH') or die('Hacking attempt!');
 
+// MatchAndCopy doğru yerdemi? değil ise hata işleyicisi tanımlanır ve başlatılmak üzere eklenir
 if (basename(dirname(__FILE__)) != 'MatchAndCopy') {
     add_event_handler('init', 'MatchAndCopy_error');
-    function MatchAndCopy_error(): void
+    function MatchAndCopy_error(): void // Hata fonksiyonu tanımlanıyor.
     {
         global $page;
         $page['errors'][] = 'MatchAndCopy folder name is incorrect, uninstall the plugin and rename it to "MatchAndCopy"';
     }
-
+            // sayfada hata bildirimi için atama yapılıyor
     return;
 }
 

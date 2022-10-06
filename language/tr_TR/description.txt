@@ -1,0 +1,1 @@
+Eski piwigo veritabanındaki öğelerle ilişkili meta verileri (etiketler, açıklama vb.) eşleştirmek ve yeni veritabanına kopyalayarak aktarmak  için bir eklenti.
